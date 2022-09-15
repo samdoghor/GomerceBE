@@ -1,0 +1,104 @@
+-- PostgreSQL Database Documentation https://www.postgresql.org/docs/
+-- PostgreSQL Database version 14.5
+
+-- Gomerce Database Schema 
+/* 
+Contributors
+Samuel Doghor @samdoghor(Github)
+John Ajayi @realJohnAdex(Github)
+Aaron Ben-elijah @aaronben41(Github)
+Oluwatobi Odekunle @tee-code(Github)
+*/
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET row_security = off;
+
+-- Create Tables
+
+CREATE TABLE public.customer (
+    id INTEGER NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    phone_number INTEGER UNIQUE,
+    email_address VARCHAR(255) UNIQUE,
+    customer_password VARCHAR(255),
+    street_name TEXT,
+    city VARCHAR(255),
+    state VARCHAR(255),
+    zipcode INTEGER,
+    country VARCHAR(255),
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE,
+    PRIMARY KEY (id, email_address)
+)
+
+CREATE TABLE public.shippingAddress (
+    id INTEGER NOT NULL,
+    country VARCHAR NOT NULL,
+    phone_number INTEGER UNIQUE,
+    state VARCHAR,
+    zip_code INTEGER,
+    city VARCHAR,
+    street_name TEXT,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE public.paymentMethod (
+    id INTEGER NOT NULL,
+    name VARCHAR NOT NULL,
+    currency CHAR NOT NULL,
+)
+
+CREATE TABLE public.store (
+    id INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    address TEXT NOT NULL,
+    phone INTEGER UNIQUE,
+    email VARCHAR(255) UNIQUE,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE public.order (
+    id INTEGER NOT NULL,
+    status VARCHAR(25),
+    total_order_cost DOUBLE PRECISION CHECK(total_order_cost > 0),
+    tax DOUBLE PRECISION,
+    delivery_status VARCHAR(25),
+    delivery_date DATE,
+    customer_id INTEGER NOT NULL,
+    shipping_address_id INTEGER NOT NULL,
+    cart_id INTEGER NOT NULL,
+    seller_id INTEGER NOT NULL,
+    coupon_id INTEGER NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_customer
+      FOREIGN KEY(customer_id) 
+	  REFERENCES customer(id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+    CONSTRAINT fk_shipping_address
+      FOREIGN KEY(shipping_address_id) 
+	  REFERENCES shipping_address(id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+    CONSTRAINT fk_cart
+      FOREIGN KEY(cart_id) 
+	  REFERENCES cart(id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+    CONSTRAINT fk_seller
+      FOREIGN KEY(seller_id) 
+	  REFERENCES seller(id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+    CONSTRAINT fk_coupon
+      FOREIGN KEY(coupon_id) 
+	  REFERENCES coupon(id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+)
