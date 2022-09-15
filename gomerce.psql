@@ -5,6 +5,7 @@
 /* 
 Contributors
 Samuel Doghor @samdoghor(Github)
+Lawrence Onoja @iamlawrenceonoja(Github)
 */
 
 SET statement_timeout = 0;
@@ -34,14 +35,14 @@ CREATE TABLE public.customer (
 
 CREATE TABLE public.reviews (
     id INTEGER NOT NULL,
-    product_id INTEGER NOT NULL,
-    seller_id INTEGER NOT NULL,
-    "comment" VARCHAR NOT NULL,
+    product_id INTEGER,
+    seller_id INTEGER,
+    comment TEXT NOT NULL,
     PRIMARY KEY(id),
     CONSTRAINT fk_pid
         FOREIGN KEY(product_id)
-            REFERENCES products(id),
+            REFERENCES products(id) ON DELETE CASCADE,
     CONSTRAINT fk_sid
         FOREIGN KEY(seller_id)
-            REFERENCES sellers(id),  
+            REFERENCES sellers(id) ON DELETE CASCADE,  
 )
