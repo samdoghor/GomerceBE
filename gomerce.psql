@@ -33,7 +33,47 @@ CREATE TABLE public.customer (
     PRIMARY KEY (id, email_address)
 )
 
+<<<<<<< Updated upstream
 CREATE TABLE public.reviews (
+=======
+CREATE TABLE public.shippingAddress (
+    id INTEGER NOT NULL,
+    country VARCHAR NOT NULL,
+    phone_number INTEGER UNIQUE,
+    state VARCHAR,
+    zip_code INTEGER,
+    city VARCHAR,
+    street_name TEXT,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE public.paymentMethod (
+    id INTEGER NOT NULL,
+    name VARCHAR NOT NULL,
+    currency CHAR NOT NULL,
+
+CREATE TABLE public.store (
+    id INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    address TEXT NOT NULL,
+    phone INTEGER UNIQUE,
+    email VARCHAR(255) UNIQUE,
+    PRIMARY KEY (id)
+)
+
+CREATE TYPE Status AS ENUM ('pending', 'processing', 'completed')
+
+CREATE TABLE public.orderDetails (
+    id INTEGER NOT NULL,
+    status Status NOT NULL,
+    quantity INTEGER NOT NULL,
+    sku VARCHAR(255) NOT NULL,
+    order_id INTEGER REFERENCES orders (id) ON DELETE CASCADE,
+    product_id INTEGER REFERENCES products (id) ON DELETE RESTRICT,
+    PRIMARY KEY (id)
+
+CREATE TABLE public.review (
+>>>>>>> Stashed changes
     id INTEGER NOT NULL,
     product_id INTEGER,
     seller_id INTEGER,
@@ -41,8 +81,58 @@ CREATE TABLE public.reviews (
     PRIMARY KEY(id),
     CONSTRAINT fk_pid
         FOREIGN KEY(product_id)
+<<<<<<< Updated upstream
             REFERENCES products(id) ON DELETE CASCADE,
     CONSTRAINT fk_sid
         FOREIGN KEY(seller_id)
             REFERENCES sellers(id) ON DELETE CASCADE,  
+=======
+            REFERENCES product(id) ON DELETE CASCADE,
+    CONSTRAINT fk_sid
+        FOREIGN KEY(seller_id)
+            REFERENCES seller(id) ON DELETE CASCADE,  
+)
+
+
+CREATE TABLE public.order (
+    id INTEGER NOT NULL,
+    status VARCHAR(25),
+    total_order_cost DOUBLE PRECISION CHECK(total_order_cost > 0),
+    tax DOUBLE PRECISION,
+    delivery_status VARCHAR(25),
+    delivery_date DATE,
+    customer_id INTEGER NOT NULL,
+    shipping_address_id INTEGER NOT NULL,
+    cart_id INTEGER NOT NULL,
+    seller_id INTEGER NOT NULL,
+    coupon_id INTEGER NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_customer
+      FOREIGN KEY(customer_id) 
+	    REFERENCES customer(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+    CONSTRAINT fk_shippingAddress
+      FOREIGN KEY(shipping_address_id) 
+	    REFERENCES shippingAddress(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+    CONSTRAINT fk_cart
+      FOREIGN KEY(cart_id) 
+	    REFERENCES cart(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+    CONSTRAINT fk_seller
+      FOREIGN KEY(seller_id) 
+	    REFERENCES seller(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+    CONSTRAINT fk_coupon
+      FOREIGN KEY(coupon_id) 
+	    REFERENCES coupon(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+>>>>>>> Stashed changes
 )
