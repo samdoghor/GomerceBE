@@ -5,7 +5,10 @@
 /* 
 Contributors
 Samuel Doghor @samdoghor(Github)
-Lawrence Onoja @iamlawrenceonoja(Github)
+John Ajayi @realJohnAdex(Github)
+Aaron Ben-elijah @aaronben41(Github)
+Oluwatobi Odekunle @tee-code(Github)
+Onoja Lawrence @iamlawrenceonoja(Github)
 */
 
 SET statement_timeout = 0;
@@ -33,9 +36,6 @@ CREATE TABLE public.customer (
     PRIMARY KEY (id, email_address)
 )
 
-<<<<<<< Updated upstream
-CREATE TABLE public.reviews (
-=======
 CREATE TABLE public.shippingAddress (
     id INTEGER NOT NULL,
     country VARCHAR NOT NULL,
@@ -73,7 +73,6 @@ CREATE TABLE public.orderDetails (
     PRIMARY KEY (id)
 
 CREATE TABLE public.review (
->>>>>>> Stashed changes
     id INTEGER NOT NULL,
     product_id INTEGER,
     seller_id INTEGER,
@@ -81,12 +80,10 @@ CREATE TABLE public.review (
     PRIMARY KEY(id),
     CONSTRAINT fk_pid
         FOREIGN KEY(product_id)
-<<<<<<< Updated upstream
             REFERENCES products(id) ON DELETE CASCADE,
     CONSTRAINT fk_sid
         FOREIGN KEY(seller_id)
             REFERENCES sellers(id) ON DELETE CASCADE,  
-=======
             REFERENCES product(id) ON DELETE CASCADE,
     CONSTRAINT fk_sid
         FOREIGN KEY(seller_id)
@@ -134,5 +131,4 @@ CREATE TABLE public.order (
 	    REFERENCES coupon(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
->>>>>>> Stashed changes
 )
