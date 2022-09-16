@@ -80,14 +80,10 @@ CREATE TABLE public.review (
     PRIMARY KEY(id),
     CONSTRAINT fk_pid
         FOREIGN KEY(product_id)
-            REFERENCES products(id) ON DELETE CASCADE,
+            REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_sid
         FOREIGN KEY(seller_id)
-            REFERENCES sellers(id) ON DELETE CASCADE,  
-            REFERENCES product(id) ON DELETE CASCADE,
-    CONSTRAINT fk_sid
-        FOREIGN KEY(seller_id)
-            REFERENCES seller(id) ON DELETE CASCADE,  
+            REFERENCES seller(id) ON DELETE CASCADE ON UPDATE CASCADE,  
 )
 
 
