@@ -1,11 +1,8 @@
 # Gomerce Backend Service
 
-<<<<<<< HEAD
 E-commerce [gomerce](https://github.com/Gomerce/GomerceBE.git) enhanced with JWT authentication, SqlAlchemy, **SQLite** persistence and deployment scripts via Docker. It has all the ready-to-use bare minimum essentials.
-=======
 This is the backend for and open source ALX-T Udacity full-stack developer graduate project.
 It is the backend API for a B2C e-commerce web application
->>>>>>> f777bf00731cae12835ada355360bf9ae8ca3067
 
 # Collaboration
 
@@ -18,12 +15,9 @@ Informations on how best to contribute to this initiative can be found at the [C
 
 # Requirements
 
-<<<<<<< HEAD
 ```bash
 $ git clone https://github.com/Gomerce/GomerceBE.git
 $ cd GomerceBE
-=======
->>>>>>> f777bf00731cae12835ada355360bf9ae8ca3067
 ```
 Python 3.9 or higher
 PostgreSQL 13.* or higher - recommended
@@ -35,15 +29,12 @@ PostgreSQL 13.* or higher - recommended
 
 Install this extension `Python` from Microsoft on your code editor (VS Code) or it's equivalent for the editor you use, to allow you to use the same coding style with everyone.
 
-<<<<<<< HEAD
 1. [Getting Started](#✨-how-to-use-the-code)
 2. [Project Structure](#✨-project-structure)
 3. [Modules](#✨-api)
 4. [Testing](#✨-testing)
 5. [Contributors](#✨-contributors)
-=======
 Setup your linter to follow `pycodestyle` and your formatter to follow `autopep8`
->>>>>>> f777bf00731cae12835ada355360bf9ae8ca3067
 
 ## Virtual environment
 
@@ -51,16 +42,13 @@ How to setup a python virtual environment
 
 - Create the virtual environment,
 
-<<<<<<< HEAD
 ```bash
 $ git clone https://github.com/Gomerce/GomerceBE.git
 $ cd GomerceBE
 ```
-=======
   ```
   python -m venv .venv
   ```
->>>>>>> f777bf00731cae12835ada355360bf9ae8ca3067
 
 - Activate the virtual environment
   - for windows
@@ -162,7 +150,6 @@ The local URL to access the API should be `http://localhost:3303/`
 
 You can visit the Products URL to test the application at `http://localhost:3303/products`
 
-<<<<<<< HEAD
 ## ✨ Contributors
 > The Gomerce project won't be complete without these backend developers: <br /> 
 
@@ -173,6 +160,4 @@ You can visit the Products URL to test the application at `http://localhost:3303
 </a>
 
 ---
-=======
 The API Swagger documentation should be accessible at `http://localhost:3303/apidocs`
->>>>>>> f777bf00731cae12835ada355360bf9ae8ca3067

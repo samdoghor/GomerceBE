@@ -18,6 +18,7 @@
 - [Queens Kisivuli](https://github.com/queensk)
 - [Kalu Chinonso](https://github.com/tripletens)
 - [Tapiwa](https://github.com/deltaCS99)
+- [Abednego Aginam](https://github.com/Abednego-py)
 - [Kevin Muriuki](https://github.com/Kevinmuriuki)
 - [Christopher Bundi](https://github.com/bundiw)
 - [Obiora Ebuka](https://github.com/oEbuka)

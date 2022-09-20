@@ -1,5 +1,5 @@
 """
-Define the User model
+Define the Customer model
 """
 from . import db
 from .abc import BaseModel, MetaBaseModel
