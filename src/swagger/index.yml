@@ -1,0 +1,9 @@
+title: Home route
+description: This welcomes you to the home api
+tags:
+  - index
+responses:
+  200:
+    description: The api routes is up and healthy
+    schema:
+      example: { "message": "Welcome to Gomerce API" }

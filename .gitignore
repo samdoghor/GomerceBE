@@ -18,6 +18,9 @@ __pycache__/
 # C extensions
 *.so
 
+# IDE extension
+.idea
+
 # Distribution / packaging
 .Python
 build/
@@ -68,6 +71,7 @@ coverage.xml
 *.pot
 
 # Django stuff:
+
 *.log
 local_settings.py
 db.sqlite3

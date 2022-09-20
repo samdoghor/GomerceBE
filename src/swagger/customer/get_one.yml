@@ -1,0 +1,18 @@
+title: Get a customer
+description: Return a customer key information based on his name
+tags:
+  - customer
+parameters:
+  - name: first_name
+    in: path
+    type: string
+    description: the first name of the customer
+responses:
+  200:
+    description: The customer's information were successfully retrieved
+    schema:
+      example:
+        customer:
+          last_name: Doe
+          first_name: John
+          age: 30

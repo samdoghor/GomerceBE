@@ -1,6 +1,10 @@
 # First Contributions
 
-This project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, follow the steps below.
+Welcome 👋 to your guide on contributing to this awesome initiative.
+
+Every participant of the project is encouraged to make the first and mandatory contribution to the repo, to add your name to the contributor's list in the [`Contributors.md`](./Contributors.md) file.
+
+This guide below offers the steps to make your first contribution, follow the steps below.
 
 _If you're not comfortable with command line, [here are tutorials using GUI tools.](#tutorials-using-other-tools)_
 
@@ -50,6 +54,7 @@ Now create a branch using the `git checkout` command:
 ```
 git checkout -b your-new-branch-name
 ```
+
 `your-new-branch-name` should be the name you intend to call the branch
 
 For example:
@@ -93,11 +98,11 @@ replacing `<add-your-branch-name>` with the name of the branch you created earli
 <details>
 <summary> <strong>If you get any errors while pushing, click here:</strong> </summary>
 
-* ### Authentication Error
+- ### Authentication Error
      <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
   remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
-  fatal: Authentication failed for 'https://github.com/<your-username>/gomerce_backend.git/'</pre>  
-   Go to [GitHub's tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on generating and configuring an SSH key to your account.
+  fatal: Authentication failed for 'https://github.com/<your-username>/gomerce_backend.git/'</pre>
+  Go to [GitHub's tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on generating and configuring an SSH key to your account.
 
 </details>
 
@@ -121,8 +126,32 @@ Celebrate your contribution and share it with your friends and followers.
 
 You could join our slack team in case you need any help or have any questions. [Join slack team](https://join.slack.com/t/firstcontributors/shared_invite/zt-vchl8cde-S0KstI_jyCcGEEj7rSTQiA).
 
-Now let's get you started with contributing to other projects. Voila! From now hence, further contribution would be coming from the team lead, which 
-  shall be the agreed source code from the team working together [instruction](https://github.com/Ajioz/gomerce_backend/blob/main/README.md).
+Now let's get you started with contributing to other projects. Voila! From now hence, further contribution would be coming from the team lead, which
+shall be the agreed source code from the team working together [instruction](./README.md).
+
+# Further Contributions
+
+## Scope
+
+In order to allow for a team spirit, we would not be accepting any further pull request from a single person who is not a team lead with changes made to the code feature, stucture or any other part of this repo that is not the [Contributors.md](./Contributors.md).
+
+Every pull request on this repo should come from a feature or issue approved for development by the Project Leads and the community.
+
+If there is any need discovered feature or bug, please inform the project leads or raise and issue, and on the feedback from the project leads or isses, the pull request for feature or bug implementation is welcomed for review.
+
+Every pull request will be reviewed by the project team and community, we are encouraged to keep and open mind to the solutions we offer.
+
+## Code Style
+
+We recommend using `autopep8` for auto formatting the python code. Please note that if your code is not formatted according to the guide as much as possible, we will reject your Pull Request until it is fixed.
+
+## Commit guidelines
+
+We encourage you to take a look at the information contained in the resource [Git Commit Practices](https://initialcommit.com/blog/git-commit-messages-best-practices) for an effective commit style, as we adopt such.
+
+# The bottom line
+
+We are all humans trying to work together to improve the community. Always be kind and appreciate the need for tradeoffs. ❤️
 
 ### [Additional material](additional-material/git_workflow_scenarios/additional-material.md)
 
