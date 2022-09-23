@@ -1,3 +1,4 @@
+
 from email.policy import default
 from . import db
 from .abc import BaseModel, MetaBaseModel
