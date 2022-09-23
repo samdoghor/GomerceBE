@@ -5,8 +5,8 @@ from . import db
 from .abc import BaseModel, MetaBaseModel
 
 
-class OrderDetails(db.Model, BaseModel, metaclass=MetaBaseModel):
-    """OrderDetails Model"""
+class order_details(db.Model, BaseModel, metaclass=MetaBaseModel):
+    """Order details Model"""
 
     __tablename__ = "order_details"
 
@@ -16,5 +16,5 @@ class OrderDetails(db.Model, BaseModel, metaclass=MetaBaseModel):
     sku = db.Column(db.String(50), nullable=False)
 
     #foreign keys
-    # order_id = db.Column(db.Integer, db.ForeignKey('Order.id'), nullable=False)
-    # product_id = db.Column(db.Integer, db.ForeignKey('Product.id'), nullable=False)
+    # order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable=False)
+    # product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
