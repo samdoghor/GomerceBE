@@ -19,4 +19,4 @@ class PaymentMethods(db.Model, BaseModel, metaclass=MetaBaseModel):
     updated_at = db.Column(db.DateTime(), default=datetime.utcnow)
 
     #Relationship
-    payment_details = db.relationship('paymentDetails', backref='payment_methods', lazy=True)
+    payment_details = db.relationship('payment_details', backref='payment_methods', lazy=True)
