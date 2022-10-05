@@ -8,6 +8,13 @@ class InternalServerError(Exception):
         print(sys.exc_info())
 
 
+class DuplicateData(Exception):
+    def __init__(self, message):
+        self.code = 400
+        self.message = message
+        print(sys.exc_info())
+
+
 class Unauthorized(Exception):
     def __init__(self, message) -> None:
         self.code = 401
@@ -20,9 +27,21 @@ class AccessDenied(Exception):
         self.message = message
 
 
-class UserNotFound(Exception):
+class DataNotFound(Exception):
     def __init__(self, message) -> None:
         self.code = 404
+        self.message = message
+
+
+class ResourceNotCreated(Exception):
+    def __init__(self, message) -> None:
+        self.code = 500
+        self.message = message
+
+
+class NotificationFailed(Exception):
+    def __init__(self, message) -> None:
+        self.code = 500
         self.message = message
 
 

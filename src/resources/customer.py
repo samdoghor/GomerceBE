@@ -7,7 +7,7 @@ from flask_restful import Resource
 from flask_restful.reqparse import Argument
 from repositories import CustomerRepository
 from utils import parse_params
-from utils.errors import UserNotFound
+from utils.errors import DataNotFound
 
 
 class CustomerResource(Resource):
@@ -21,7 +21,7 @@ class CustomerResource(Resource):
         try:
             customer = CustomerRepository.get(customer_id=customer_id)
             return jsonify({"data": customer.json})
-        except UserNotFound as e:
+        except DataNotFound as e:
             abort(404, e.message)
         except Exception:
             abort(500)

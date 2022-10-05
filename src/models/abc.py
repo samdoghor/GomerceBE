@@ -31,8 +31,8 @@ class BaseModel:
     """ Generalize __init__, __repr__ and to_json
         Based on the models columns """
 
-    print_filter = ()
-    to_json_filter = ()
+    print_filter = ('password')
+    to_json_filter = ('password')
 
     def __repr__(self):
         """ Define a base way to print models

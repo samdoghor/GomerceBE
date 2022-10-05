@@ -1,6 +1,7 @@
 """
-Define the User model
+Define the Customer model
 """
+import uuid
 from . import db
 from .abc import BaseModel, MetaBaseModel
 from datetime import datetime
@@ -14,12 +15,13 @@ class Customer(db.Model, BaseModel, metaclass=MetaBaseModel):
     __tablename__ = "customers"
 
     id = db.Column(db.Integer, primary_key=True)
+    # id = db.Column(db.String(), primary_key=True, default=lambda: str(uuid.uuid4()))
     username = db.Column(db.String(32), nullable=False, unique=True)
     first_name = db.Column(db.String(300))
     last_name = db.Column(db.String(300))
     email = db.Column(db.String(100), nullable=False, unique=True)
     phone = db.Column(db.String(15))
-    password = db.Column(db.Text())
+    password = db.Column(db.Text(), nullable=False)
     country = db.Column(db.String(50))
     state = db.Column(db.String(70))
     city = db.Column(db.String(50))
