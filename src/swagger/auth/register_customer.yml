@@ -1,0 +1,67 @@
+title: Register a customer
+description: Return a customer key information after successful registration
+tags:
+  - customer-register
+requestBody:
+  description: Basic information needed to register a customer
+  content:
+    application/json:
+      schema:
+        username:
+          type: string
+          example: meryted
+          description: the username of the customer
+        email:
+          type: string
+          example: buga@email.com
+          description: the email of the customer
+        first_name:
+          type: string
+          example: Sunday
+          description: the first_name of the customer
+        last_name:
+          type: string
+          example: Ajioz
+          description: the last_name of the customer
+        password:
+          type: string
+          example: 1)273hkennd0@@{
+          description: the password of the customer
+        confirm_url:
+          type: string
+          example: "http://localhost:2000/confirm_email"
+          description: the url for the confirm email notification to be sent
+        phone:
+          type: string
+          example: 2348012345678
+          description: the phone number of the customer
+      example:
+        username: meryted
+        email: buga@mail.com
+        first_name: Sunnday
+        last_name: Ajioz
+        password: 1)273hkennd0@@{
+        confirm_url: "http://localhost:2000/confirm_email"
+        phone: "2348012345678"
+  required: true
+responses:
+  201:
+    description: The customer's identity was verified and customer registered successfully
+    content:
+      application/json:
+        example:
+          data:
+            city: null
+            country: null
+            created_at: 2022-09-21
+            email: meryt@mail.com
+            first_name: Obi
+            id: 1
+            last_name: Gregory
+            phone: null
+            state: null
+            street_name: null
+            updated_at: 2022-09-21
+            username: meryt
+            zipcode: null
+

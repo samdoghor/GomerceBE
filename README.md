@@ -1,7 +1,7 @@
 # Gomerce Backend Service
 
 This is the backend for and open source ALX-T Udacity full-stack developer graduate project.
-It is the backend API for a B2C e-commerce web application
+It is the backend API for a B2B2C e-commerce web application
 
 # Collaboration
 
@@ -74,6 +74,9 @@ pip install -r requirements-prod.txt
 
 - Create a folder named `logs` in the root directory, if it does not exist
 
+- Create and accout on [Mailjet](https://www.mailjet.com) to get your `API_KEY` and `API_SECRET` for development process.
+make sure to validate your `EMAIL_SENDER_EMAIL` on mailjet first
+
 ## Datebase setup
 
 ### Create databases
@@ -98,15 +101,15 @@ export FLASK_APP=src/server.py
 - for windows
   - On CMD
   ```
-  SET FLASK_APP=src/server.py
+  SET FLASK_APP="src/server.py"
   ```
   - On BASH
   ```
-  export FLASK_APP=src/server.py
+  export FLASK_APP="src/server.py"
   ```
   - On POWERSHELL
   ```
-  $env:FLASK_APP=src/server.py
+  $env:FLASK_APP="src/server.py"
   ```
 
 ### **Create database tables from migrations**

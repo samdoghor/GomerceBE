@@ -1,0 +1,28 @@
+title: Login a customer
+description: Return a customer key information after successful login
+tags:
+  - customer-login
+produces:
+  - application/json
+content:
+'application/json':
+  schema:
+    username:
+      type: string
+      example: meryted/buga@email.com
+      description: the email/username of the customer
+    password:
+      type: string
+      example: 1)273hkennd0@@{
+      description: the password of the customer
+  example:
+    username: meryted
+    password: 1)273hkennd0@@{
+responses:
+  200:
+    description: The customer's identity was verified and information were successfully retrieved
+    example:
+      customer:
+        last_name: Doe
+        first_name: John
+

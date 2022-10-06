@@ -1,1 +1,2 @@
 from .customer import CustomerRepository
+from .verification_token import VerificationTokenRepository
