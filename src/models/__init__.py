@@ -7,3 +7,4 @@ from .paymentMethod import paymentMethod
 from .verification_token import VerificationToken
 from .product import Product
 from .store import Store
+

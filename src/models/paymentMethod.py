@@ -16,6 +16,7 @@ class paymentMethod(db.Model):
     created_at = db.Column(db.DateTime(), default = datetime.utcnow)
     updated_at = db.Column(db.DateTime(), default = datetime.utcnow)
 
+
     #relationship
     payment_details = db.relationship('payment_Detail', backref="payment_methods", lazy=True)
 
@@ -26,10 +27,14 @@ def __init__(self, name='',currency=''):
 
 
 payment = paymentMethod()
+
 payment.currency = Currency('NGN')
 
 # db.session.add(payment)
 # db.session.commit()
+
+
+# to see the sign of any currency
 
 payment.currency # Currency('NGN')
 payment.currency.name # Nigerian Naira
