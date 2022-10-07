@@ -16,6 +16,9 @@ class paymentMethod(db.Model):
     created_at = db.Column(db.DateTime(), default = datetime.utcnow)
     updated_at = db.Column(db.DateTime(), default = datetime.utcnow)
 
+    #relationship
+    payment_details = db.relationship('payment_Detail', backref="payment_methods", lazy=True)
+
 
 def __init__(self, name='',currency=''):
     self.name = name
