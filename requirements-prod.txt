@@ -5,7 +5,7 @@ Flask-Script==2.0.6
 Flask==2.2.2
 Jinja2==3.1.2
 SQLAlchemy==1.4.41
-Werkzeug==2.2.2
+Werkzeug==3.0.1
 alembic==1.8.1
 flasgger==0.9.5
 itsdangerous==2.1.2
